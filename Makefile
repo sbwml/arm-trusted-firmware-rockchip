@@ -8,11 +8,11 @@ include $(INCLUDE_DIR)/trusted-firmware-a.mk
 PKG_NAME:=rkbin
 PKG_RELEASE:=1
 
-PKG_SOURCE_URL:=https://github.com/rockchip-linux/rkbin
+PKG_SOURCE_URL:=https://github.com/sbwml/rkbin
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2022-08-01
-PKG_SOURCE_VERSION:=b0c100f1a260d807df450019774993c761beb79d
-PKG_MIRROR_HASH:=7f3abfded43e4fab29868ad7b055c0173e5a6a62f48679e6dcf560d5754a44ac
+PKG_SOURCE_DATE:=2023-04-10
+PKG_SOURCE_VERSION:=ed22a72181acedc4b725c836119ae5a04b65818f
+PKG_MIRROR_HASH:=8d3ca30c0b4786eeaf67e7252568cc1a2766c717ed7f80ad3372dcc99ad9b450
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_SOURCE_DATE).tar.gz
 
 include $(INCLUDE_DIR)/package.mk
@@ -43,10 +43,17 @@ define Trusted-Firmware-A/rk3568
   DDR:=rk35/$(RK3568_DDR)
 endef
 
+define Trusted-Firmware-A/rk3588
+  BUILD_SUBTARGET:=armv8
+  ATF:=rk35/$(RK3588_ATF)
+  DDR:=rk35/$(RK3588_DDR)
+endef
+
 TFA_TARGETS:= \
 	rk3328 \
 	rk3399 \
-	rk3568
+	rk3568 \
+	rk3588
 
 define Build/Compile
 	# This comment is the workaround for "extraneous 'endif'" error
