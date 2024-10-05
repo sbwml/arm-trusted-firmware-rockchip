@@ -6,13 +6,12 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/trusted-firmware-a.mk
 
 PKG_NAME:=rkbin
+PKG_VERSION:=20240222
 PKG_RELEASE:=1
 
-PKG_SOURCE_URL:=https://github.com/rockchip-linux/rkbin.git
-PKG_SOURCE_PROTO:=git
-PKG_SOURCE_DATE:=2024-02-22
-PKG_SOURCE_VERSION:=a2a0b89b6c8c612dca5ed9ed8a68db8a07f68bc0
-PKG_MIRROR_HASH:=e79fa17db5ce55eee8f55c43187c92df40bba931c68bc53eee5e80b9cb5c28e8
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+PKG_SOURCE_URL:=https://github.com/sbwml/arm-trusted-firmware-rockchip/releases/download/$(PKG_VERSION)/
+PKG_HASH:=0983908c66c453a658241f2743806d1c8a4fe115dd24105f8dad89b8d16ef1d6
 
 include $(INCLUDE_DIR)/package.mk
 include ./atf-version.mk
