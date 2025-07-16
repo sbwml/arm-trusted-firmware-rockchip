@@ -1,4 +1,4 @@
-## rkbin - rk3328/rk3399/rk3568/rk3588
+## rkbin - rk3328/rk3399/rk3568/rk3576/rk3588
 
 Replace on openwrt source code
 

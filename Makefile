@@ -6,12 +6,12 @@ include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/trusted-firmware-a.mk
 
 PKG_NAME:=rkbin
-PKG_VERSION:=20241023
+PKG_VERSION:=20250124
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=https://github.com/sbwml/arm-trusted-firmware-rockchip/releases/download/$(PKG_VERSION)/
-PKG_HASH:=08054a94d8d9f3a43a7a77dadf34b0e1acf58e05328b353d1c09d796c8fec698
+PKG_HASH:=a4afdd594ab8cfd6a5394e636eee8bfe62522a08cdbcdd2b592da1c67dc6c0e2
 
 include $(INCLUDE_DIR)/package.mk
 include ./atf-version.mk
@@ -41,6 +41,12 @@ define Trusted-Firmware-A/rk3568
   DDR:=rk35/$(RK3568_DDR)
 endef
 
+define Trusted-Firmware-A/rk3576
+  BUILD_SUBTARGET:=armv8
+  ATF:=rk35/$(RK3576_ATF)
+  DDR:=rk35/$(RK3576_DDR)
+endef
+
 define Trusted-Firmware-A/rk3588
   BUILD_SUBTARGET:=armv8
   ATF:=rk35/$(RK3588_ATF)
@@ -51,6 +57,7 @@ TFA_TARGETS:= \
 	rk3328 \
 	rk3399 \
 	rk3568 \
+	rk3576 \
 	rk3588
 
 define Build/Compile
