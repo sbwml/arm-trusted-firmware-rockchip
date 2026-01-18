@@ -1,6 +1,4 @@
-## rkbin - rk3328/rk3399/rk3568/rk3576/rk3588
-
-Replace on openwrt source code
+## rkbin - rk3568/rk3576
 
 ```shell
 rm -rf package/boot/arm-trusted-firmware-rockchip
